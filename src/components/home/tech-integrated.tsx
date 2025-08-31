@@ -4,13 +4,14 @@ import React from 'react';
 import GridContainer from '../grid-container';
 import { BentoItem } from './bento';
 import CategoryHeader from './category-header';
+import Image from 'next/image';
 
 export default function TechIntegrated() {
   return (
     <div className="relative max-w-full">
       <GridContainer className="2xl:before:hidden 2xl:after:hidden mt-10">
         <CategoryHeader className="text-pink-600 dark:text-pink-500">
-          TECH INTEGRATED
+          TECH INTEGRATION
         </CategoryHeader>
       </GridContainer>
 
@@ -39,7 +40,7 @@ export default function TechIntegrated() {
             href="#"
             className="inline-block rounded-4xl bg-black px-4 py-2 text-sm/6 font-semibold text-white hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600"
           >
-            Integrate with the eco-system
+            Integrate with our eco-system
           </a>
         </div>
       </GridContainer>
@@ -342,30 +343,46 @@ export default function TechIntegrated() {
           <TabPanels>
             <TabPanel className="bg-gray-950/5 p-2 dark:bg-white/10 dark:opacity-40">
               <BentoItem className="relative isolate h-148 w-full overflow-hidden bg-white/75! p-0! dark:bg-gray-950! dark:ring dark:ring-white/10">
-                <div className="absolute -left-[300%] h-150 w-380 min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
-                  {/* todo  */}
-                </div>
+                <Image
+                  unoptimized
+                  src="./api.png"
+                  alt="image "
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </BentoItem>
             </TabPanel>
 
             <TabPanel className="bg-gray-950/5 p-2 dark:bg-white/5">
               <BentoItem className="relative isolate h-148 w-full overflow-hidden bg-white/75! p-0! dark:bg-gray-950!">
-                <div className="size-430 shrink-0 scale-50 sm:scale-75 lg:scale-100 dark:bg-white/5">
-                  {/*todo  */}
-                </div>
+                <Image
+                  unoptimized
+                  src="./mcp.png"
+                  alt="image "
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </BentoItem>
             </TabPanel>
 
             <TabPanel className="bg-gray-950/5 p-2 dark:bg-white/5">
               <BentoItem className="relative isolate h-148 w-full overflow-hidden bg-white/75! p-0! dark:bg-gray-950!">
-                <div className="absolute -left-[300%] h-150 w-380 min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
-                  {/*todo */}
-                </div>
+                <Image
+                  unoptimized
+                  src="./demo.webp"
+                  alt="image "
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </BentoItem>
             </TabPanel>
           </TabPanels>
         </GridContainer>
       </TabGroup>
+      <div
+        className="mt-10 w-full h-px bg-neutral-300 dark:bg-neutral-700"
+        aria-hidden="true"
+      />
     </div>
   );
 }

@@ -3,13 +3,12 @@ import clsx from 'clsx';
 import CategoryHeader from './category-header';
 import GridContainer from '../grid-container';
 import { Ipad } from './ipad';
-import Image from 'next/image';
 import { SidebarDemo } from './sidebar-demo';
 
 const WhyUseSmartCards: React.FC = () => {
   return (
     <div>
-      <div className=" w-full  mt-10 mb-10" />
+      <div className=" w-full mt-10 " />
       <GridContainer className="2xl:before:hidden 2xl:after:hidden">
         <CategoryHeader className="text-sky-900 dark:text-blue-400">
           Why Use SMART-CARDS?
@@ -35,6 +34,10 @@ const WhyUseSmartCards: React.FC = () => {
           </div>
         </div>
       </GridContainer>
+      <div
+        className="mt-10 w-full h-px bg-neutral-300 dark:bg-neutral-700"
+        aria-hidden="true"
+      />
     </div>
   );
 };

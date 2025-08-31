@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
         <div className="lg:flex-1">
           <div
             aria-hidden="true"
-            className="flex h-16 items-end px-2 font-mono text-xs/6 whitespace-pre text-black/20 max-sm:px-4 sm:h-24 dark:text-white/25"
+            className="flex h-16 items-end px-2 font-mono text-xs/6 whitespace-pre text-orange-400 max-sm:px-4 sm:h-24 dark:text-orange-400"
           >
             <span className="hidden max-sm:inline">AI - POWERED , </span>
             <span className="hidden sm:max-md:inline">AI - POWERED , </span>
@@ -22,7 +22,6 @@ const Hero: React.FC = () => {
             <span className="hidden xl:inline">AI - POWERED , </span>
             <span className="inline dark:hidden">UTILITY FIRST , </span>
             <span className="hidden dark:inline">USER FIRST</span>
-            USER FIRST <span className="max-sm:hidden">DESIGN</span>
           </div>
 
           <GridContainer>
@@ -94,6 +93,10 @@ const Hero: React.FC = () => {
           <Iphone />
         </div>
       </div>
+      <div
+        className="mt-10 w-full h-px bg-neutral-300 dark:bg-neutral-700"
+        aria-hidden="true"
+      />
     </div>
   );
 };
