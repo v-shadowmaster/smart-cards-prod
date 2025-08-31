@@ -3,6 +3,7 @@ import GridContainer from '../grid-container';
 import { AnimatedTooltipPreview } from './tooltip';
 import Glass from './glass-button';
 import Iphone from './iphone-mockup';
+import { GeistSans } from 'geist/font/sans';
 
 const Hero: React.FC = () => {
   return (
@@ -23,11 +24,16 @@ const Hero: React.FC = () => {
             <span className="hidden dark:inline">USER FIRST</span>
             USER FIRST <span className="max-sm:hidden">DESIGN</span>
           </div>
+
           <GridContainer>
-            <h1 className="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl font-[var(--font-geist-sans)]">
+            <h1
+              className={`px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl font-sans ${GeistSans.variable}`}
+            >
               Plan the present
             </h1>
-            <h1 className="px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl font-[var(--font-geist-sans)]">
+            <h1
+              className={`px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl font-sans ${GeistSans.variable}`}
+            >
               Build the future
             </h1>
           </GridContainer>
