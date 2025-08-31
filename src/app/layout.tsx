@@ -1,19 +1,10 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/theme-toggle';
 import Script from 'next/script';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 const inter = localFont({
   src: [
@@ -154,7 +145,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${plexMono.variable} ${source.variable} ${ubuntuMono.variable} antialiased dark:bg-gray-950`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable} ${plexMono.variable} ${source.variable} ${ubuntuMono.variable} antialiased dark:bg-gray-950`}
       suppressHydrationWarning
     >
       <head>
@@ -218,7 +209,11 @@ export default function RootLayout({
         <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
       </head>
 
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          <div className="isolate">{children}</div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
