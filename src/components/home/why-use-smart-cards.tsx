@@ -9,14 +9,15 @@ import { SidebarDemo } from './sidebar-demo';
 const WhyUseSmartCards: React.FC = () => {
   return (
     <div>
+      <div className=" w-full  mt-10 mb-10" />
       <GridContainer className="2xl:before:hidden 2xl:after:hidden">
-        <CategoryHeader className="text-blue-500 dark:text-blue-400">
+        <CategoryHeader className="text-sky-900 dark:text-blue-400">
           Why Use SMART-CARDS?
         </CategoryHeader>
       </GridContainer>
       <div className="mt-8"></div>
       <GridContainer className="pl-4">
-        <p className="max-w-(--breakpoint-md) px-2 text-lg/7 font-medium text-gray-600 max-sm:px-4 dark:text-gray-400">
+        <p className="max-w-(--breakpoint-md) px-2 text-lg/7 font-medium text-gray-600 max-sm:px-2 dark:text-gray-400">
           Replace every app with Smart Cards. platform designed to transform
           your phone into a unified command center
         </p>

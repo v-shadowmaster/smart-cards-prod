@@ -1,4 +1,6 @@
+import Footer from '@/components/home/footer';
 import Hero from '@/components/home/hero';
+import TechIntegrated from '@/components/home/tech-integrated';
 import WhyUseSmartCards from '@/components/home/why-use-smart-cards';
 
 export default function Home() {
@@ -9,8 +11,12 @@ export default function Home() {
         <div className="col-start-1 row-span-full row-start-1 hidden border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 md:block dark:[--pattern-fg:var(--color-white)]/10"></div>
         {/* Main content area */}
         <Hero />
-        <div className=" w-full bg-gray-400 dark:bg-white/10 mt-10 mb-10" />
+        <div className=" w-full mt-10 mb-10" />
         <WhyUseSmartCards />
+        <div className=" w-full  mt-10 mb-10" />
+        <TechIntegrated />
+        <div className=" w-full  mt-10 mb-10" />
+        <Footer />
         {/* Candy cane */}
         <div className="row-span-full row-start-1 hidden border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 md:col-start-3 md:block dark:[--pattern-fg:var(--color-white)]/10"></div>
       </div>
