@@ -28,8 +28,20 @@ export default function SmashCards() {
             <PhoneFrame>
               <IconGrid />
             </PhoneFrame>
+            <ul className="text-center text-sm text-gray-600 mt-8 space-y-2 list-none">
+              <li>
+                  <span className="font-bold text-gray-800">100+ apps</span> cluttering your phone
+              </li>
+              <li>
+                  Average user switches apps <span className="font-bold text-gray-800">300x per day</span>
+              </li>
+              <li>
+                  Wasted time: <span className="font-bold text-gray-800">2.5 hours daily</span>
+              </li>
+            </ul>
           </div>
-
+        
+            {/* Arrow Indicator */}
           <div className="flex flex-col justify-center items-center my-12 lg:my-0">
               <div className="w-20 h-20 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <svg
@@ -50,7 +62,7 @@ export default function SmashCards() {
               <p className="font-bold text-gray-800 text-lg">Smart Card</p>
               <p className="text-gray-500 text-md">Transformation</p>
           </div>
-          
+
           {/* After Column */}
           <div className="flex flex-col items-center mt-12 lg:mt-0">
             <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
@@ -59,6 +71,17 @@ export default function SmashCards() {
             <PhoneFrame>
               <SmartCardGrid />
             </PhoneFrame>
+            <ul className="text-center text-sm text-gray-600 mt-8 space-y-2 list-none">
+                <li>
+                    <span className="font-bold text-gray-800">5 dynamic cards</span> • infinite possibilities
+                </li>
+                <li>
+                    Reduce app switching by <span className="font-bold text-gray-800">90%</span>
+                </li>
+                <li>
+                    Save time: <span className="font-bold text-gray-800">2+ hours daily</span>
+                </li>
+            </ul>
           </div>
           
         </div>
