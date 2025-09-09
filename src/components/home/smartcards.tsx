@@ -1,7 +1,7 @@
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { IconGrid } from "@/components/ui/IconGrid";
 import { SmartCardGrid } from "@/components/ui/SmartCardGrid";
-import { ArrowLeft } from "@/components/ui/icons"; // Replace with an existing export
+//import { ArrowLeft } from "@/components/ui/icons"; // Replace with an existing export
 
 export default function SmashCards() {
   return (
@@ -39,7 +39,7 @@ export default function SmashCards() {
                   Wasted time: <span className="font-bold text-gray-800">2.5 hours daily</span>
               </li>
             </ul>
-          </div>
+        </div>
         
             {/* Arrow Indicator */}
           <div className="flex flex-col justify-center items-center my-12 lg:my-0">
@@ -51,7 +51,7 @@ export default function SmashCards() {
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                       strokeWidth={2.5}
-                  >
+                    >
                       <path
                           strokeLinecap="round"
                           strokeLinejoin="round"

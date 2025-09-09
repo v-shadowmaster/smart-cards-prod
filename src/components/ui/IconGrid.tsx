@@ -1,5 +1,5 @@
 import React from "react";
-import GenericAppIcon from "./GenericAppIcon";
+//import GenericAppIcon from "./GenericAppIcon";
 import {
   Users,
   Code,
@@ -47,16 +47,17 @@ export const IconGrid: React.FC = () => {
           }
 
           // Otherwise, render the generic app icon
-          if (app.icon && app.name && app.bgColor) {
-            return (
-              <GenericAppIcon
-                key={index}
-                name={app.name}
-                icon={app.icon}
-                bgColor={app.bgColor}
-              />
-            );
-          }
+        //   if (app.icon && app.name && app.bgColor) {
+        //     return (
+        //       <GenericAppIcon
+        //         key={index}
+        //         name={app.name}
+        //         icon={app.icon}
+        //         bgColor={app.bgColor}
+        //       />
+        //     );
+        //   }
+        
 
           return null; // Safety fallback
         })}

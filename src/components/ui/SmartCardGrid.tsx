@@ -1,5 +1,7 @@
 import React from "react";
-import SmartCard from "../home/smartcards";
+import SmartCard, { SmartCardProps } from "../home/SmartCardProps";
+//import SmartCard from "../home/smartcards";
+//import PropsSmartcards from "../home/propsSmartcards";
 import { Brain, Plane, Heart, Home, Calendar, Users, Code } from "./icons";
 
 interface CardItem {
