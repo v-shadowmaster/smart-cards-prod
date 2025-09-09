@@ -1,6 +1,6 @@
-import { PhoneFrame } from "../ui/PhoneFrame";
-import { IconGrid } from "../ui/IconGrid";
-import { SmartCardGrid } from "../ui/SmartCardGrid";
+import { PhoneFrame } from "@/components/ui/PhoneFrame";
+import { IconGrid } from "@/components/ui/IconGrid";
+import { SmartCardGrid } from "@/components/ui/SmartCardGrid";
 import { ArrowLeft } from "@/components/ui/icons"; // Replace with an existing export
 
 export default function SmashCards() {
@@ -30,11 +30,27 @@ export default function SmashCards() {
             </PhoneFrame>
           </div>
 
-          {/* Arrow Divider */}
-          <div className="hidden lg:flex justify-center items-center my-8 lg:my-0">
-            <ArrowLeft className="w-12 h-12 text-gray-400" />
+          <div className="flex flex-col justify-center items-center my-12 lg:my-0">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-9 w-9 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                  >
+                      <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                  </svg>
+              </div>
+              <p className="font-bold text-gray-800 text-lg">Smart Card</p>
+              <p className="text-gray-500 text-md">Transformation</p>
           </div>
-
+          
           {/* After Column */}
           <div className="flex flex-col items-center mt-12 lg:mt-0">
             <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
