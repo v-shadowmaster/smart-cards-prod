@@ -1,5 +1,7 @@
+// app/page.tsx
 import Footer from '@/components/home/footer';
 import Hero from '@/components/home/hero';
+import SmartCards from '@/components/home/smartcards';
 import TechIntegrated from '@/components/home/tech-integrated';
 import WhyUseSmartCards from '@/components/home/why-use-smart-cards';
 
@@ -15,17 +17,22 @@ export default function Home() {
 
         {/* Main content area */}
         <Hero />
-        <div className=" w-full mt-10 mb-10" />
+        <div className="w-full mt-10 mb-10" />
+
         <WhyUseSmartCards />
-        <div className=" w-full  mt-10 mb-10" />
+        <div className="w-full mt-10 mb-10" />
+
+        {/* SmartCards Section */}
+        <SmartCards />
+        <div className="w-full mt-10 mb-10" />
 
         <TechIntegrated />
-        <div className=" w-full  mt-10 mb-10" />
-        <div className=" w-full  mt-10 mb-10" />
+        <div className="w-full mt-10 mb-10" />
+        <div className="w-full mt-10 mb-10" />
 
         <Footer />
-        <div className=" w-full  mt-10 mb-10" />
-        <div className=" w-full  mt-10 mb-10" />
+        <div className="w-full mt-10 mb-10" />
+        <div className="w-full mt-10 mb-10" />
 
         {/* Candy cane */}
         <div
