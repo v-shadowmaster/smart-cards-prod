@@ -9,10 +9,10 @@ export default function SmashCards() {
       {/* Header Section */}
       <header className="text-center py-12 px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Transform Your Digital Life
+          From App Chaos to Card Clarity
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          From cluttered chaos to organized simplicity with smart card interfaces
+          See how Smart Cards transform the overwhelming mobile experience into something beautiful and functional
         </p>
       </header>
 
