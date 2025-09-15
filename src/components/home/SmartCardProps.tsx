@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { SmartCardGrid } from "@/components/ui/SmartCardGrid";
+
 
 export interface SmartCardProps {
   title: string;
@@ -25,15 +26,15 @@ const SmartCard: React.FC<SmartCardProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`p-4 rounded-xl ${backgroundColor} ${textColor} ${className} cursor-pointer`}
+      className={`p-4 rounded-xl ${backgroundColor} ${textColor} ${className} cursor-pointer flex flex-col items-center justify-center`}
+      style={size === "large"
+        ? { minHeight: 120 }
+        : { minHeight: 90 }
+      }
     >
-      <div className="flex items-center space-x-3">
-        <Icon className="h-6 w-6" />
-        <div>
-          <h3 className="font-bold">{title}</h3>
-          <p className="text-sm">{subtitle}</p>
-        </div>
-      </div>
+      <Icon className="h-6 w-6 mb-2" />
+      <h3 className="font-bold text-center">{title}</h3>
+      <p className="text-sm text-center">{subtitle}</p>
     </div>
   );
 };
