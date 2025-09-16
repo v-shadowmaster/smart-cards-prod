@@ -1,8 +1,8 @@
 import Hero from "@/components/home/hero";
-import WhyUseSmartCards from "@/components/home/why-use-smart-cards";
+import WhyUseSmartCards from "@/components/home/WhyUseSmartCards";
 import SmartCards from "@/components/home/SmartCards";
 import AvailablePlatforms from "@/components/home/AvailablePlatforms";
-import TechIntegrated from "@/components/home/tech-integrated";
+import TechIntegrated from "@/components/home/TechIntegrated";
 import Footer from "@/components/home/footer";
 
 export default function Home() {
