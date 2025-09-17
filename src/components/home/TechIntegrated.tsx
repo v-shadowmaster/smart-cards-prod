@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export default function TechIntegrated() {
   return (
-    <div className="relative max-w-full">
+    <div className="relative max-w-full px-8">
       <GridContainer className="2xl:before:hidden 2xl:after:hidden mt-10">
         <CategoryHeader className="text-pink-600 dark:text-pink-500">
           TECH INTEGRATION

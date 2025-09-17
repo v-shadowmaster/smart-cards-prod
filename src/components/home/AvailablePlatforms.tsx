@@ -1,3 +1,4 @@
+import { GeistSans } from "geist/font/sans";
 import React from "react";
 import {
   ArrowRight,
@@ -9,6 +10,8 @@ import {
   Sparkles,
   Users,
 } from "@/components/ui/lucide";
+import CategoryHeader from './category-header';
+import GridContainer from '../grid-container';
 
 // --- Custom Components based on new design ---
 
@@ -61,17 +64,31 @@ const StatCard = ({ value, label }: { value: string; label: string }) => (
 
 // --- Available Platforms Section ---
 
+const geistSans = GeistSans;
+
 export default function AvailablePlatforms() {
   return (
-    <section className="w-full py-20 bg-white">
-      {/* ✅ Edge-to-edge, no container restriction */}
+    <section className="w-full py-4 bg-white text-gray-900 dark:bg-black dark:text-white px-7 transition-colors duration-300">
+
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="max-w-(--breakpoint-md) px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl font-sans geistsans_d5a4f12f-module__kHwNXG__variable text-gray-900 text-left leading-tight">
-             Available Across Platforms
+        <div className="text-center space-y-4 mb-16 ">
+          <GridContainer className="2xl:before:hidden 2xl:after:hidden text-left ml-0">
+            <CategoryHeader className="text-sky-900 dark:text-blue-400">
+            Available <br/>
+            Across Platforms
+            </CategoryHeader>
+          </GridContainer>
+
+          {/* <h2 className={`px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl font-sans ${geistSans.variable} text-gray-900 text-left leading-tight`}>
+              Available 
           </h2>
-          <p className="max-w-(--breakpoint-md) px-2 text-lg/8 font-medium text-gray-600 max-sm:px-4 dark:text-gray-400 text-left">
-            Start today, scale tomorrow
+          <h2 className={`px-2 text-4xl tracking-tighter text-balance max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl font-sans ${geistSans.variable} text-gray-900 text-left leading-tight`}>
+            Across Platforms
+          </h2> */}
+          <div className="mt-4"></div>
+
+          <p className="px-5 text-lg/7 font-medium text-gray-600 dark:text-gray-400 max-sm:px-4 text-left">
+              Start today, scale tomorrow
           </p>
         </div>
 
@@ -119,8 +136,8 @@ export default function AvailablePlatforms() {
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-400 rounded-full border-4 border-white z-10"></div>
                 <div className="flex-1 pl-8">
                   <div className="bg-green-400/10 rounded-lg p-4 border border-green-400/20">
-                    <Badge className="bg-green-400 text-green-900">Available Now</Badge>
-                    <p className="text-sm text-gray-600">
+                    <Badge className="bg-green-400 text-green-900 ">Available Now</Badge>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       Full feature set including AI integrations, smart cards, and real-time sync across devices.
                     </p>
                   </div>
@@ -132,11 +149,11 @@ export default function AvailablePlatforms() {
                 <div className="flex-1 pr-8">
                   <div className="bg-blue-400/10 rounded-lg p-4 border border-blue-400/20">
                     <Badge className="bg-blue-400 text-blue-900">Coming Q2 2025</Badge>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       Native iOS experience with seamless iCloud integration and Siri shortcuts support.
                     </p>
                     <div className="mt-3">
-                      <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
+                      <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
                         <span>Development Progress</span>
                         <span>75%</span>
                       </div>
@@ -213,7 +230,7 @@ export default function AvailablePlatforms() {
                 <div className="flex-1 pl-8">
                   <div className="bg-purple-400/10 rounded-lg p-4 border border-purple-400/20">
                     <Badge className="bg-purple-400 text-purple-900">Future Vision</Badge>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       Preparing for the next generation of AI-native operating systems and ambient computing.
                     </p>
                   </div>
@@ -231,6 +248,13 @@ export default function AvailablePlatforms() {
           </div>
         </div>
       </div>
+
+      {/* Divider */}
+      <div
+        className="mt-10 w-full h-px bg-neutral-300 dark:bg-neutral-700"
+        aria-hidden="true"
+      />
+
     </section>
   );
 }

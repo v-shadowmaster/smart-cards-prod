@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
 
           <div
             aria-hidden="true"
-            className="flex h-6 items-end px-2 font-mono text-xs/6 whitespace-pre text-black/20 max-sm:px-4 sm:h-10 dark:text-white/25"
+            className="flex h-6 items-end px-2 font-mono text-xs/6 whitespace-pre text-black/50 max-sm:px-4 sm:h-10 dark:text-white/35"
           >
             Every necessary utility features in one app{' '}
           </div>

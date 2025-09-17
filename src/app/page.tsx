@@ -9,9 +9,12 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
+      <div className="px-8"> 
       <Hero />
+      </div>
       <div className="w-full mt-10 mb-10" />
 
+      <div className="px-8">
       {/* Why Use Smart Cards */}
       <WhyUseSmartCards />
       <div className="w-full mt-10 mb-10" />
@@ -19,22 +22,24 @@ export default function Home() {
       {/* Smart Cards */}
       <SmartCards />
       <div className="w-full mt-10 mb-10" />
+      </div>
 
-      {/* Available Platforms - Full width section */}
+      {/* Available Platforms */}
       <div className="w-full">
-        <AvailablePlatforms />
+      <AvailablePlatforms />
       </div>
       <div className="w-full mt-10 mb-10" />
 
-      {/* Tech Integration - Full width section */}
+      {/* Tech Integration  */}
       <div className="w-full">
-        <TechIntegrated />
+      <TechIntegrated />
       </div>
       <div className="w-full mt-10 mb-10" />
 
       {/* Footer */}
       <Footer />
       <div className="w-full mt-10 mb-10" />
+
     </div>
   );
 }
