@@ -8,7 +8,7 @@ import GridContainer from '../grid-container';
 
 export default function SmartCards() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-black dark:text-white transition-colors duration-300">
+    <div className="w-full py-4 bg-white text-gray-900 dark:bg-black dark:text-white transition-colors duration-300">
       {/* Header Section */}
       <header className="text-center py-10 px-2">
       <GridContainer className="2xl:before:hidden 2xl:after:hidden text-left ml-0">

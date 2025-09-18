@@ -5,41 +5,41 @@ import AvailablePlatforms from "@/components/home/AvailablePlatforms";
 import TechIntegrated from "@/components/home/TechIntegrated";
 import Footer from "@/components/home/Footer";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="overflow-x-hidden">
-      {/* Hero */}
-      <div className="px-8"> 
-      <Hero />
+    <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
+      <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Hero */}
+        <section>
+          <Hero />
+        </section>
+
+        {/* Why Use Smart Cards */}
+        <section>
+          <WhyUseSmartCards />
+        </section>
+
+        {/* Smart Cards */}
+        <section>
+          <SmartCards />
+        </section>
+
+        {/* Available Platforms */}
+        <section>
+          <AvailablePlatforms />
+        </section>
+
+        {/* Tech Integration */}
+        <section>
+          <TechIntegrated />
+        </section>
+
+        {/* Footer */}
+        <footer>
+          <Footer />
+        </footer>
       </div>
-      <div className="w-full mt-10 mb-10" />
-
-      <div className="px-8">
-      {/* Why Use Smart Cards */}
-      <WhyUseSmartCards />
-      <div className="w-full mt-10 mb-10" />
-
-      {/* Smart Cards */}
-      <SmartCards />
-      <div className="w-full mt-10 mb-10" />
-      </div>
-
-      {/* Available Platforms */}
-      <div className="w-full">
-      <AvailablePlatforms />
-      </div>
-      <div className="w-full mt-10 mb-10" />
-
-      {/* Tech Integration  */}
-      <div className="w-full">
-      <TechIntegrated />
-      </div>
-      <div className="w-full mt-10 mb-10" />
-
-      {/* Footer */}
-      <Footer />
-      <div className="w-full mt-10 mb-10" />
-
     </div>
   );
 }
