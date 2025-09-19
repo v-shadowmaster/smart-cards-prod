@@ -1,37 +1,44 @@
-import Footer from '@/components/home/footer';
-import Hero from '@/components/home/hero';
-import TechIntegrated from '@/components/home/tech-integrated';
-import WhyUseSmartCards from '@/components/home/why-use-smart-cards';
+import Hero from "@/components/home/Hero";
+import WhyUseSmartCards from "@/components/home/WhyUseSmartCards";
+import SmartCards from "@/components/home/SmartCards";
+import AvailablePlatforms from "@/components/home/AvailablePlatforms";
+import TechIntegrated from "@/components/home/TechIntegrated";
+import Footer from "@/components/home/Footer";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="max-w-screen overflow-x-hidden">
-      <div className="grid grid-cols-1 grid-rows-[1fr_1px_auto] justify-center pt-14.25 [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] lg:mx-0">
-        {/* Candy cane */}
-        <div
-          className="col-start-1 row-span-full row-start-1 hidden md:block"
-          aria-hidden="true"
-        />
+    <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
+      <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Hero */}
+        <section>
+          <Hero />
+        </section>
 
-        {/* Main content area */}
-        <Hero />
-        <div className=" w-full mt-10 mb-10" />
-        <WhyUseSmartCards />
-        <div className=" w-full  mt-10 mb-10" />
+        {/* Why Use Smart Cards */}
+        <section>
+          <WhyUseSmartCards />
+        </section>
 
-        <TechIntegrated />
-        <div className=" w-full  mt-10 mb-10" />
-        <div className=" w-full  mt-10 mb-10" />
+        {/* Smart Cards */}
+        <section>
+          <SmartCards />
+        </section>
 
-        <Footer />
-        <div className=" w-full  mt-10 mb-10" />
-        <div className=" w-full  mt-10 mb-10" />
+        {/* Available Platforms */}
+        <section>
+          <AvailablePlatforms />
+        </section>
 
-        {/* Candy cane */}
-        <div
-          className="row-span-full row-start-1 hidden md:col-start-3 md:block"
-          aria-hidden="true"
-        />
+        {/* Tech Integration */}
+        <section>
+          <TechIntegrated />
+        </section>
+
+        {/* Footer */}
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </div>
   );
