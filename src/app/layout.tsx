@@ -5,6 +5,7 @@ import './globals.css';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/theme-toggle';
 import Script from 'next/script';
+import { AuthProvider } from "./Provider";
 
 const inter = localFont({
   src: [
@@ -149,7 +150,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link
+        
+        {/* <link                                                        remove comments if I need favicons
           rel="apple-touch-icon"
           sizes="180x180"
           href={v('/favicons/apple-touch-icon.png')}
@@ -172,7 +174,7 @@ export default function RootLayout({
           href={v('/favicons/safari-pinned-tab.svg')}
           color="#38bdf8"
         />
-        <link rel="shortcut icon" href={v('/favicons/favicon.ico')} />
+        <link rel="shortcut icon" href={v('/favicons/favicon.ico')} /> */}
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -209,9 +211,11 @@ export default function RootLayout({
         <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
       </head>
 
-      <body>
+         <body>
         <ThemeProvider>
-          <div className="isolate">{children}</div>
+          <AuthProvider>
+            <div className="isolate">{children}</div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
