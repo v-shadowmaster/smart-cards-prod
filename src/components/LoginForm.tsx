@@ -1,0 +1,89 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
+
+// Zod schema for validation
+const formSchema = z.object({
+  email: z.string().email({ message: "Invalid email address" }),
+  password: z.string().min(6, { message: "Password must be at least 6 characters long" }),
+});
+
+type FormData = z.infer<typeof formSchema>;
+
+const inputClass =
+  "mt-1 block w-full rounded-md border-gray-300 shadow-sm px-3 py-2 focus:border-blue-500 focus:ring-blue-500";
+
+const LoginForm = () => {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = async (data: FormData) => {
+    setErrorMessage(null);
+
+    const result = await signIn("credentials", {
+      redirect: false,
+      email: data.email,
+      password: data.password,
+    });
+
+    if (result?.error) {
+      setErrorMessage("Invalid email or password");
+    } else {
+      reset();
+      window.location.href = "/dashboard";
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      {/* Email */}
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          Email
+        </label>
+        <input id="email" type="email" placeholder="x@example.com" {...register("email")} className={inputClass} />
+        {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
+      </div>
+
+      {/* Password */}
+      <div>
+        <div className="flex items-center justify-between">
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            Password
+          </label>
+          <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-500">
+            Forgot your password?
+          </a>
+        </div>
+        <input id="password" type="password" placeholder="••••••••" {...register("password")} className={inputClass} />
+        {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>}
+      </div>
+
+      {/* API error message */}
+      {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
+
+      {/* Submit button */}
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="flex w-full items-center justify-center rounded-md bg-gray-800 py-2 px-4 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+      >
+        {isSubmitting ? "Logging in..." : "Login"}
+      </button>
+    </form>
+  );
+};
+
+export default LoginForm;
