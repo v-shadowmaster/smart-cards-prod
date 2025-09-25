@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { signIn } from "next-auth/react"; // 👈 Import NextAuth signIn
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 
 // Zod schema for form validation
@@ -29,19 +29,18 @@ const LoginForm = () => {
   });
 
   const onSubmit = async (data: FormData) => {
-    setErrorMessage(null); // clear previous errors
+    setErrorMessage(null);
 
-    // Call NextAuth credentials provider
+   
     const result = await signIn("credentials", {
-      redirect: false, // we’ll control navigation manually
+      redirect: false, 
       email: data.email,
       password: data.password,
     });
 
     if (result?.error) {
-      setErrorMessage("Invalid email or password"); // show error
+      setErrorMessage("Invalid email or password"); 
     } else {
-      // ✅ Successful login → redirect to dashboard
       window.location.href = "/dashboard";
       reset();
     }
@@ -53,8 +52,7 @@ const LoginForm = () => {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
-        >
+          className="block text-sm font-medium text-gray-700">
           Email
         </label>
         <input
@@ -62,8 +60,7 @@ const LoginForm = () => {
           type="email"
           {...register("email")}
           placeholder="x@example.com"
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm px-3 py-2 focus:border-blue-500 focus:ring-blue-500"
-        />
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm px-3 py-2 focus:border-blue-500 focus:ring-blue-500"/>
         {errors.email && (
           <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
         )}
@@ -74,35 +71,35 @@ const LoginForm = () => {
         <div className="flex items-center justify-between">
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
-          >
+            className="block text-sm font-medium text-gray-700">
             Password
           </label>
           <a
             href="#"
-            className="text-sm font-medium text-blue-600 hover:text-blue-500"
-          >
+            className="text-sm font-medium text-blue-600 hover:text-blue-500">
             Forgot your password?
           </a>
         </div>
+
         <input
           id="password"
           type="password"
           {...register("password")}
           placeholder="••••••••"
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm px-3 py-2 focus:border-blue-500 focus:ring-blue-500"
-        />
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm px-3 py-2 focus:border-blue-500 focus:ring-blue-500"/>
         {errors.password && (
           <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
         )}
       </div>
+
 
       {/* Show API error */}
       {errorMessage && (
         <p className="text-sm text-red-600">{errorMessage}</p>
       )}
 
-      {/* Submit */}
+
+
       <button
         type="submit"
         disabled={isSubmitting}

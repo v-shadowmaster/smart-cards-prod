@@ -24,13 +24,14 @@ const handler = NextAuth({
       },
 
       async authorize(credentials) {
-        // 1. ✅ Validation
+
+                                                //Validation
         if ( !credentials?.email || !credentials?.password ) 
         {
           throw new Error("Missing email or password");
         }
 
-        // 2. ✅ Authentication (replace with real DB check that is in MongoDB!)
+                                           // Authentication (replace with real DB check that is in MongoDB!)
         if (
           credentials.email === "test@example.com" &&
           credentials.password === "password123"
@@ -48,7 +49,7 @@ const handler = NextAuth({
           // }
 
         {
-          // 3. ✅ JWT Creation
+                                                     // JWT Creation
           const token = await new SignJWT
           ({
             email: credentials.email,
@@ -58,7 +59,7 @@ const handler = NextAuth({
             .setExpirationTime("1h")
             .sign(secret);
 
-          // 4. ✅ Cookie Setup
+          // Cookie Setup
           return {
             id: "1",
             email: credentials.email,
@@ -75,12 +76,12 @@ const handler = NextAuth({
     strategy: "jwt",
   },
   pages: {
-    signIn: "/login", // Custom login page
+    signIn: "/login",                      //Custom login page
   },
   secret: process.env.JWT_SECRET_KEY,
 
 
-  // ✅ Add redirect callback for Google login
+                                        //Add redirect callback for Google login
   callbacks: {
     async redirect({ url, baseUrl }) {
       return `${baseUrl}/dashboard`;

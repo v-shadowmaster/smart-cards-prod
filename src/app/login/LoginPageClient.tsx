@@ -40,24 +40,21 @@ export default function LoginPageClient() {
                 <button
                   aria-label="Continue with Apple"
                   onClick={() => signIn("apple")}
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition-colors duration-200 hover:bg-gray-50 cursor-pointer"
-                >
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition-colors duration-200 hover:bg-gray-50 cursor-pointer">
                   <FaApple className="h-6 w-6 text-gray-700" />
                 </button>
 
                 <button
                   aria-label="Continue with Google"
                   onClick={() => signIn("google")}
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition-colors duration-200 hover:bg-gray-50 cursor-pointer"
-                >
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition-colors duration-200 hover:bg-gray-50 cursor-pointer">
                   <FaGoogle className="h-6 w-6 text-gray-700" />
                 </button>
 
                 <button
                   aria-label="Continue with Auth0"
                   onClick={() => signIn("auth0")}
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition-colors duration-200 hover:bg-gray-50 cursor-pointer"
-                >
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition-colors duration-200 hover:bg-gray-50 cursor-pointer">
                   <SiMeta className="h-6 w-6 text-gray-700" />
                 </button>
               </div>
@@ -66,8 +63,7 @@ export default function LoginPageClient() {
                 Don&apos;t have an account?{" "}
                 <Link
                   href="/signup"
-                  className="font-semibold text-blue-600 hover:text-blue-500"
-                >
+                  className="font-semibold text-blue-600 hover:text-blue-500">
                   Sign up
                 </Link>
               </p>
