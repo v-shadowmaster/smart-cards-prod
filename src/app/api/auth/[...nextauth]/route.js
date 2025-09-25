@@ -6,44 +6,45 @@ import FacebookProvider from "next-auth/providers/facebook";
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET_KEY);
 
-const handler = NextAuth({
+/** @type {import('next-auth').AuthOptions} */
+
+export const authOptions = {
   providers: [
 
-    GoogleProvider
-    ({
+    GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-    
 
-    FacebookProvider({  
+
+    FacebookProvider({
       clientId: process.env.META_CLIENT_ID,
       clientSecret: process.env.META_CLIENT_SECRET,
     }),
 
 
-    CredentialsProvider ({
+    CredentialsProvider({
       name: "Credentials",
-      credentials:
-      {
+      credentials: {
         email: { label: "Email", type: "email", placeholder: "x@example.com" },
         password: { label: "Password", type: "password" },
       },
 
+
       async authorize(credentials) {
 
-                                                //Validation
-        if ( !credentials?.email || !credentials?.password ) 
-        {
+        //Validation
+        if (!credentials?.email || !credentials?.password) {
           throw new Error("Missing email or password");
         }
 
-                                           // Authentication (replace with real DB check that is in MongoDB!)
+        // Authentication (replace with real DB check that with MongoDB!)
         if (
           credentials.email === "test@example.com" &&
           credentials.password === "password123"
-        )
-
+        ) 
+        
+        {
           // try {
           //   await connectMongoDB();
           //   const user = await User.findOne({ email });
@@ -55,16 +56,16 @@ const handler = NextAuth({
           //   console.log("Error: ", error);
           // }
 
-        {
-                                                     // JWT Creation
-          const token = await new SignJWT
-          ({
+
+
+          // JWT Creation
+          const token = await new SignJWT({
             email: credentials.email,
           })
-
             .setProtectedHeader({ alg: "HS256" })
             .setExpirationTime("1h")
             .sign(secret);
+
 
           // Cookie Setup
           return {
@@ -75,25 +76,29 @@ const handler = NextAuth({
         }
 
         throw new Error("Invalid email or password");
+        
       },
     }),
   ],
+
 
   session: {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/login",                      //Custom login page
+    signIn: "/login",                                           //Custom login page
   },
   secret: process.env.JWT_SECRET_KEY,
 
 
-                                        //Add redirect callback for Google login
+  //Add redirect callback for Google login
   callbacks: {
     async redirect({ url, baseUrl }) {
       return `${baseUrl}/dashboard`;
     },
   },
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
