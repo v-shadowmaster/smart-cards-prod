@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { SignJWT } from "jose";
 import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET_KEY);
 
@@ -14,6 +15,12 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     
+
+    FacebookProvider({  
+      clientId: process.env.META_CLIENT_ID,
+      clientSecret: process.env.META_CLIENT_SECRET,
+    }),
+
 
     CredentialsProvider ({
       name: "Credentials",
